@@ -24,38 +24,39 @@ export default function TimeSlot() {
         {
             day: "30 Aug",
             slot: 4,
-            time: ["03:00 PM", "03:30 PM", "03:40 PM", "03:00 PM"]
+            time: ["03:00 PM", "03:30 PM", "03:40 PM", "04:00 PM"]
         },
     ];
 
     return (
         <div className="flex flex-col gap-5 pb-4 sm:max-w-[450px] max-w-sm">
-            <div className="flex space-x-4 overflow-x-auto sm:overflow-hidden pb-2 sm:justify-center">
+            <div className="flex space-x-4 overflow-x-auto pb-2 sm:justify-center">
                 <span className="hidden sm:flex items-center">
                     <RiArrowLeftSLine className="text-2xl" />
                 </span>
-                {slots.map((slot, index) => (
-                    <div
-                        key={index}
-                        onClick={() => setSelectedIndex(index)}
-                        className={`flex-shrink-0 px-4 py-2 flex flex-col gap-1 text-center whitespace-nowrap cursor-pointer
-                             ${selectedIndex === index ? 'border-sky-500 border-b-4' : 'bg-white text-slate-800'
-                            }`}
-                    >
-                        <div className="flex gap-1 sm:text-base sm:flex-col">
-                            <span className="font-semibold">
-                                {slot.day}
-                            </span>
-                            <span className="font-semibold text-green-600">
-                                {slot.slot} slots
-                            </span>
+                <div className="flex flex-nowrap">
+                    {slots.map((slot, index) => (
+                        <div
+                            key={index}
+                            onClick={() => setSelectedIndex(index)}
+                            className={`flex-shrink-0 px-4 py-2 flex flex-col gap-1 text-center whitespace-nowrap cursor-pointer
+                                ${selectedIndex === index ? 'border-sky-500 border-b-4' : 'bg-white text-slate-800'
+                                }`}
+                        >
+                            <div className="flex gap-1 sm:text-base sm:flex-col">
+                                <span className="font-semibold">
+                                    {slot.day}
+                                </span>
+                                <span className="font-semibold text-green-600">
+                                    {slot.slot} slots
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
                 <span className="hidden sm:flex items-center">
                     <RiArrowRightSLine className="text-2xl" />
                 </span>
-
             </div>
             <div className="flex flex-wrap gap-2">
                 {slots[selectedIndex].time.map((time, index) => (
