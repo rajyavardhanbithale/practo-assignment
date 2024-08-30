@@ -19,6 +19,7 @@ export default function Header() {
         <>
             {profile && (
                 <div
+                    ref={ref}
                     className="flex px-4 py-2 bg-sky-50 sm:bg-white sm:flex-row-reverse sm:py-6 sm:rounded-xl">
                     {/* about profile */}
                     <div className="flex flex-col w-3/4 sm:w-full gap-3 mt-2">
@@ -53,7 +54,6 @@ export default function Header() {
                         </div>
 
                         <div
-                            ref={ref}
                             className="text-lg sm:text-xl font-semibold text-slate-800">
                             {profile.experience.total} Experience
                         </div>
