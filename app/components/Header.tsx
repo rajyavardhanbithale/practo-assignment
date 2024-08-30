@@ -5,6 +5,8 @@ import Image from "next/image";
 import { IoArrowBackSharp, IoShareSocialOutline } from "react-icons/io5";
 import { useInView } from "react-intersection-observer";
 import { useProfile } from "./ContextProvider";
+import { FaCheckCircle } from "react-icons/fa";
+import { AiFillLike } from "react-icons/ai";
 
 export default function Header() {
     const { profile } = useProfile() || {};
@@ -18,33 +20,73 @@ export default function Header() {
             {profile && (
                 <div
                     ref={ref}
-                    className="flex px-4 py-2 bg-sky-50">
+                    className="flex px-4 py-2 bg-sky-50 sm:bg-slate-100 sm:flex-row-reverse">
                     {/* about profile */}
-                    <div className="flex  flex-col w-3/4 gap-3">
-                        <div className="text-xl font-semibold text-slate-800">
+                    <div className="flex flex-col w-3/4 sm:w-full gap-3 mt-2">
+                        <Image
+                            src={'https://www.practostatic.com/marketplace-api/doctor-profile/pcd_blue_logo.png'}
+                            height={0}
+                            width={0}
+                            sizes="100vw"
+                            className="h-14 w-11/12 sm:w-1/2 -ml-8 block sm:hidden"
+                            alt="practo"
+                        />
+                        <div className="text-2xl font-semibold text-slate-800">
                             {profile.name}
                         </div>
 
-                        <div className="text-xs font-medium text-slate-500">
-                            {profile.specialties.map((item, idx) => (
-                                <span key={idx}>{item}, </span>
-                            ))}
-                        </div>
-
-                        <div className="text-sm text-slate-500">
+                        <div className="text-sm  sm:text-lg text-slate-500 hidden sm:block">
                             {profile.education.map((item, idx) => (
                                 <span key={idx}>{item}, </span>
                             ))}
                         </div>
 
-                        <div className="text-lg font-semibold text-slate-800">
+                        <div className="text-xs sm:text-lg font-medium text-slate-500">
+                            {profile.specialties.map((item, idx) => (
+                                <span key={idx}>{item}, </span>
+                            ))}
+                        </div>
+
+                        <div className="text-sm  sm:text-lg text-slate-500 sm:hidden block">
+                            {profile.education.map((item, idx) => (
+                                <span key={idx}>{item}, </span>
+                            ))}
+                        </div>
+
+                        <div className="text-lg sm:text-xl font-semibold text-slate-800">
                             {profile.experience.total} Experience
+                        </div>
+
+                        <Image
+                            src={'https://www.practostatic.com/marketplace-api/doctor-profile/pcd_contextual_banner.png'}
+                            height={0}
+                            width={0}
+                            sizes="100vw"
+                            className="h-14 w-11/12 sm:w-1/2 -ml-1 sm:block hidden"
+                            alt="practo"
+                        />
+
+                        <div className="hidden sm:flex sm:flex-col">
+                            <div className="flex">
+                                <FaCheckCircle className="text-green-500" />
+                                <span className="text-lg">
+                                    Medical Registration Verified
+                                </span>
+
+                                <div className="flex">
+                                    <AiFillLike className="text-green-600" />
+                                    <span className="text-lg">
+                                        Medical Registration Verified
+                                    </span>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
                     {/* avatar */}
-                    <div className="flex w-1/2 justify-center items-center justify-end">
-                        <div className="h-36 w-36">
+                    <div className="flex w-1/2 sm:w-28 sm:justify-start sm:items-start items-center justify-end sm:mr-5">
+                        <div className="h-36 w-36 sm:h-24 sm:w-24">
                             <Image
                                 src={profile.avatar}
                                 alt="avatar"
@@ -58,9 +100,12 @@ export default function Header() {
                 </div>
             )}
 
+
+
+
             {/* sticky header */}
             {(profile && !inView) &&
-                < div className="flex px-4 py-2 bg-white shadow-xl sticky top-0 z-10 gap-3 items-center">
+                <div className="sm:hidden flex px-4 py-2 bg-white shadow-xl sticky top-0 z-10 gap-3 items-center">
                     <span>
                         <IoArrowBackSharp className="text-slate-800 text-xl" />
                     </span>

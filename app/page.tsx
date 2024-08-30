@@ -9,7 +9,7 @@ import Recommended from "./components/Recommended";
 export default function Home() {
 
   return (
-    <main className="flex flex-col gap-7 mb-20">
+    <main className="flex flex-col gap-7 mb-20 sm:max-w-[768px] sm:mt-20 sm:m-20">
       <Header />
       <RatingCard />
       <div>
@@ -17,6 +17,7 @@ export default function Home() {
       </div>
       <Recommended />
       <StickyBook />
+ 
     </main>
   );
 }
