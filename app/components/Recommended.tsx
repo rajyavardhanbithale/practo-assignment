@@ -5,7 +5,7 @@ import { VscComment } from "react-icons/vsc";
 export default function Recommended() {
 
     return (
-        <div className="flex flex-col gap-5 p-4">
+        <div className="flex flex-col gap-5 p-4 sm:bg-white ">
 
             <span className="text-slate-800 text-2xl font-bold">
                 Highly Recommended For

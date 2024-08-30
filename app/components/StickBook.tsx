@@ -1,7 +1,7 @@
 export default function StickyBook() {
     return (
         <>
-            <div className="w-full flex bg-white fixed bottom-0 px-3 py-2">
+            <div className="w-full flex bg-white fixed bottom-0 px-3 py-2 sm:hidden sm:shadow-none rounded-2xl">
 
                 <div className="w-1/2 flex flex-col">
                     <span className="font-medium">Clinic appointment</span>

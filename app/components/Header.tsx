@@ -19,8 +19,7 @@ export default function Header() {
         <>
             {profile && (
                 <div
-                    ref={ref}
-                    className="flex px-4 py-2 bg-sky-50 sm:bg-slate-100 sm:flex-row-reverse">
+                    className="flex px-4 py-2 bg-sky-50 sm:bg-white sm:flex-row-reverse sm:py-6 sm:rounded-xl">
                     {/* about profile */}
                     <div className="flex flex-col w-3/4 sm:w-full gap-3 mt-2">
                         <Image
@@ -53,7 +52,9 @@ export default function Header() {
                             ))}
                         </div>
 
-                        <div className="text-lg sm:text-xl font-semibold text-slate-800">
+                        <div
+                            ref={ref}
+                            className="text-lg sm:text-xl font-semibold text-slate-800">
                             {profile.experience.total} Experience
                         </div>
 
@@ -66,21 +67,40 @@ export default function Header() {
                             alt="practo"
                         />
 
-                        <div className="hidden sm:flex sm:flex-col">
-                            <div className="flex">
-                                <FaCheckCircle className="text-green-500" />
-                                <span className="text-lg">
+                        <div className="hidden sm:flex sm:flex-col justify-start">
+                            <div className="flex items-center gap-3">
+                                <FaCheckCircle className="text-green-500 text-lg" />
+                                <span className="text-base">
                                     Medical Registration Verified
                                 </span>
-
-                                <div className="flex">
-                                    <AiFillLike className="text-green-600" />
-                                    <span className="text-lg">
-                                        Medical Registration Verified
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <AiFillLike className="text-green-600 text-lg" />
+                                <div className="flex gap-1 items-center">
+                                    <span className="text-base text-green-500 font-semibold">
+                                        97%
+                                    </span>
+                                    <span className="text-xs text-slate-600">
+                                        (4556 patients)
                                     </span>
                                 </div>
                             </div>
 
+                        </div>
+
+                        <div className="hidden sm:flex">
+                            <span className="text-sm text-slate-700">
+                                Dr. Sumanth M. Shetty completed his post graduation in masters of dental surgery[ mds] in the field of Pedodontics and preventive dentistry, from the esteemed
+                                <span className="text-sky-500 ml-1">
+                                    more ...
+                                </span>
+                            </span>
+                        </div>
+
+                        <div className="hidden sm:flex justify-end">
+                            <span className="text-sm text-sky-500 underline">
+                                Share your story
+                            </span>
                         </div>
                     </div>
 

@@ -9,7 +9,7 @@ export default function Appointment() {
     return (
         <>
             {profile && (
-                <div className="shadow-md rounded-2xl">
+                <div className="shadow-md sm:shadow-none sm:rounded-2xl">
                     <div
                         className="w-11/12 flex flex-row py-2 bg-sky-200/80 mx-auto shadow-lg rounded-t-xl justify-between">
                         <div className="flex p-2 gap-1 item-center">
@@ -62,7 +62,7 @@ export default function Appointment() {
                     </div>
 
                     <div
-                        className="w-11/12 flex flex-row bg-white mx-auto justify-between">
+                        className="w-11/12 flex flex-row bg-white mx-auto justify-between sm:px-3">
                         <TimeSlot />
                     </div>
                 </div>

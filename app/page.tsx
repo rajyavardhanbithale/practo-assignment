@@ -12,12 +12,11 @@ export default function Home() {
     <main className="flex flex-col gap-7 mb-20 sm:max-w-[768px] sm:mt-20 sm:m-20">
       <Header />
       <RatingCard />
-      <div>
+      <div className="block sm:fixed sm:right-0">
         <Appointment />
       </div>
       <Recommended />
       <StickyBook />
- 
     </main>
   );
 }

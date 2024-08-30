@@ -12,7 +12,7 @@ export default function RatingCard() {
     return (
         <>
             {profile && (
-                <div className="flex w-full">
+                <div className="flex w-full sm:bg-white sm:py-6 sm:rounded-xl">
                     {/* like */}
                     <div className="flex w-1/2 flex-col justify-center items-center gap-1">
                         <div className="flex justify-center items-end gap-1">
