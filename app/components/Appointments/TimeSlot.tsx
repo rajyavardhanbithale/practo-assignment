@@ -24,12 +24,12 @@ export default function TimeSlot() {
         {
             day: "30 Aug",
             slot: 4,
-            time: ["03:00 PM", "03:30 PM", "03:40 PM", "04:00 PM"]
+            time: ["03:00 PM", "03:30 PM", "03:40 PM", "04:00 PM", "04:30 PM", "04:40 PM", "05:00 PM"]
         },
     ];
 
     return (
-        <div className="flex flex-col gap-5 pb-4 sm:max-w-[450px] max-w-sm">
+        <div className="flex flex-col gap-5 pb-4 sm:max-w-[450px] max-w-sm overflow-hidden">
             <div className="flex space-x-4 overflow-x-auto pb-2 sm:justify-center">
                 <span className="hidden sm:flex items-center">
                     <RiArrowLeftSLine className="text-2xl" />
