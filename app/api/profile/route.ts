@@ -35,7 +35,6 @@ export async function GET() {
         rating: 4.9,
         patientRecommendation: 2815,
         fees:300,
-        affiliation: "Practo One",
         medicalRegistration: "Verified",
         education: ['BDS', ' MDS - Paedodontics And Preventive Dentistry']
     };

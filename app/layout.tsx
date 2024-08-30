@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Lato } from "next/font/google";
+import { Inter, Lato, Poppins } from "next/font/google";
 import "./globals.css";
+import ContextProvider from "./components/ContextProvider";
 
-const inter = Lato({
+const inter = Poppins({
   subsets: ["latin"],
   weight: ['100', '300', '400', '700', '900'],
 });
@@ -19,7 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ContextProvider>
+          {children}
+        </ContextProvider>
+      </body>
     </html>
   );
 }

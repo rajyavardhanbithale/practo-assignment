@@ -1,43 +1,21 @@
+'use client'
+
 import Header from "./components/Header";
-import { Profile } from "@/types";
 import RatingCard from "./components/RatingCard";
 import Appointment from "./components/Appointments/Appointment";
 import StickyBook from "./components/StickBook";
+import Recommended from "./components/Recommended";
 
-async function fetchProfile() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_HOSTNAME}/api/profile`)
-  return await response.json() as Profile
-}
-
-
-
-export async function generateMetadata() {
-  const profile = await fetchProfile() as Profile
-
-  return {
-    title: `Book an appointment with ${profile.name}`,
-  }
-}
-
-
-export default async function Home() {
-
-  const response = await fetch(`${process.env.NEXT_PUBLIC_HOSTNAME}/api/profile`)
-  const profile = await response.json() as Profile
+export default function Home() {
 
   return (
-    <main className="flex flex-col gap-5">
-      <Header profile={profile} />
-      <RatingCard profile={profile} />
-      <RatingCard profile={profile} />
-      <RatingCard profile={profile} />
-      <RatingCard profile={profile} />
-      <RatingCard profile={profile} />
-
+    <main className="flex flex-col gap-7 mb-20">
+      <Header />
+      <RatingCard />
       <div>
-        <Appointment profile={profile} />
+        <Appointment />
       </div>
-
+      <Recommended />
       <StickyBook />
     </main>
   );
