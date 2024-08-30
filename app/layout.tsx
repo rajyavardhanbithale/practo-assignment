@@ -9,37 +9,37 @@ const inter = Poppins({
   weight: ['100', '300', '400', '700', '900'],
 });
 
-async function fetchProfile() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_HOSTNAME}/api/profile`);
-  return await response.json() as Profile;
-}
+// async function fetchProfile() {
+//   const response = await fetch(`${process.env.NEXT_PUBLIC_HOSTNAME}/api/profile`);
+//   return await response.json() as Profile;
+// }
 
-export async function generateMetadata(){
-  const profile = await fetchProfile();
-  return {
-    title: `Book an appointment with ${profile.name}`,
-    description: `Book an appointment with ${profile.name} at ${profile.clinicInfo.name}`,
+// export async function generateMetadata(){
+//   const profile = await fetchProfile();
+//   return {
+//     title: `Book an appointment with ${profile.name}`,
+//     description: `Book an appointment with ${profile.name} at ${profile.clinicInfo.name}`,
 
-    openGraph: {
-      title: `Book an appointment with ${profile.name}`,
-      description: `Book an appointment with ${profile.name} at ${profile.clinicInfo.name}`,
+//     openGraph: {
+//       title: `Book an appointment with ${profile.name}`,
+//       description: `Book an appointment with ${profile.name} at ${profile.clinicInfo.name}`,
 
-      images: [
-        {
-          url: profile.avatar,
-          width: 800,
-          height: 600,
-        },
-        {
-          url: profile.avatar,
-          width: 1800,
-          height: 1600,
-        },
-      ],
-    },
+//       images: [
+//         {
+//           url: profile.avatar,
+//           width: 800,
+//           height: 600,
+//         },
+//         {
+//           url: profile.avatar,
+//           width: 1800,
+//           height: 1600,
+//         },
+//       ],
+//     },
 
-  };
-}
+//   };
+// }
 
 
 
